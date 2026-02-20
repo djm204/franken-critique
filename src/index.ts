@@ -42,3 +42,14 @@ export type {
   CircuitBreaker,
   CircuitBreakerResult,
 } from './types/loop.js';
+
+// Errors
+export {
+  CritiqueError,
+  EvaluationError,
+  CircuitBreakerError,
+  EscalationError,
+  IntegrationError,
+  ConfigurationError,
+} from './errors/index.js';
+export type { CritiqueErrorOptions } from './errors/index.js';
