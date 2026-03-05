@@ -1,4 +1,7 @@
 import type { TaskId } from './common.js';
+import type { TokenSpend } from '@franken/types';
+
+export type { TokenSpend };
 
 /** A safety rule from MOD-01 (Firewall/Guardrails). */
 export interface SafetyRule {
@@ -39,14 +42,6 @@ export interface CritiqueLesson {
   readonly correctionApplied: string;
   readonly taskId: TaskId;
   readonly timestamp: string;
-}
-
-/** Token spend data from MOD-05 (Observer). */
-export interface TokenSpend {
-  readonly inputTokens: number;
-  readonly outputTokens: number;
-  readonly totalTokens: number;
-  readonly estimatedCostUsd: number;
 }
 
 /** Escalation request sent to MOD-07 (Governor). */
