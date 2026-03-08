@@ -25,7 +25,7 @@ export function createCritiqueApp(options: CritiqueAppOptions = {}): Hono {
       if (!auth || auth !== `Bearer ${options.bearerToken}`) {
         return c.json({ error: { message: 'Unauthorized', type: 'auth_error' } }, 401);
       }
-      await next();
+      return next();
     });
   }
 
@@ -49,7 +49,7 @@ export function createCritiqueApp(options: CritiqueAppOptions = {}): Hono {
         requestCounts.set(ip, { count: 1, resetAt: now + 60_000 });
       }
 
-      await next();
+      return next();
     });
   }
 
